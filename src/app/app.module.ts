@@ -1,0 +1,106 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
+import { AppComponent } from './app.component';
+
+// Import containers
+import { DefaultLayoutComponent } from './containers';
+
+import { P404Component } from './views/error/404.component';
+import { P500Component } from './views/error/500.component';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+
+const APP_CONTAINERS = [
+  DefaultLayoutComponent
+];
+
+import {
+  AppAsideModule,
+  AppBreadcrumbModule,
+  AppHeaderModule,
+  AppFooterModule,
+  AppSidebarModule,
+} from '@coreui/angular';
+
+// Import routing module
+import { AppRoutingModule } from './app.routing';
+
+// Import 3rd party components
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ChartsModule } from 'ng2-charts';
+import { CreateHomepageSectionComponent } from './views/create-homepage-section/create-homepage-section.component';
+import { UpdateHomepageSectionComponent } from './views/update-homepage-section/update-homepage-section.component';
+import { CreateDestinationSectionComponent } from './views/create-destination-section/create-destination-section.component';
+import { UpdateDestinationSectionComponent } from './views/update-destination-section/update-destination-section.component';
+import {DbioService} from './services/dbio.service'
+
+
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomepageSectionsComponent } from './views/homepage-sections/homepage-sections.component';
+import { DestinationsComponent } from './views/destinations/destinations.component';
+import { CreateMetaDataComponent } from './views/create-meta-data/create-meta-data.component';
+import { MetaDataListComponent } from './views/meta-data-list/meta-data-list.component';
+import { MetaDataComponent } from './views/meta-data/meta-data.component';
+@NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    AppAsideModule,
+    AppBreadcrumbModule.forRoot(),
+    AppFooterModule,
+    AppHeaderModule,
+    AppSidebarModule,
+    HttpClientModule,
+    PerfectScrollbarModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ChartsModule,
+    IconModule,
+    FormsModule,
+    IconSetModule.forRoot(),
+  ],
+  declarations: [
+    AppComponent,
+    ...APP_CONTAINERS,
+    P404Component,
+    P500Component,
+    LoginComponent,
+    RegisterComponent,
+    CreateHomepageSectionComponent,
+    UpdateHomepageSectionComponent,
+    CreateDestinationSectionComponent,
+    UpdateDestinationSectionComponent,
+    HomepageSectionsComponent,
+    DestinationsComponent,
+    CreateMetaDataComponent,
+    MetaDataListComponent,
+    MetaDataComponent
+  ],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    IconSetService,
+    DbioService,
+    
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }

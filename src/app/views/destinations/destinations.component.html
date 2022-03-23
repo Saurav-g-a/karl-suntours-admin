@@ -1,0 +1,43 @@
+<div class="animated fadeIn" *ngIf="destinations">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Destination List
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Destination Title</th>
+                  <th>Destination type</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let section of destinations">
+                  <td>{{section.title}}</td>
+                  <td>{{section.type}}</td>
+                  <td>
+                    <button type="button" (click)="edit(section.id)" class="btn btn-sm btn-primary">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+      

@@ -1,0 +1,88 @@
+<div class="animated fadeIn" *ngIf="section">
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Add Section </strong>
+            <small>Form</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Background Image</label>
+              <input type="File" 
+              [(ngModel)]="section.background"
+              required
+              class="form-control" name="background" id="background" placeholder="Choose image">
+            </div>
+            <div class="form-group">
+                <label for="company">Section Title</label>
+                <input type="text" 
+                [(ngModel)]="section.title"
+                class="form-control" name="title" id="title" placeholder="Section title">
+            </div>
+            <div class="form-group">
+                <label for="company">Add type</label>
+                <input type="text" 
+                [(ngModel)]="section.type"
+                class="form-control" name="type" id="type" placeholder="Add type">
+            </div>
+            <div class="form-group">
+                <label for="company">Add description1</label>
+                <input type="text" 
+                [(ngModel)]="section.description1"
+                class="form-control" name="description1" id="description1" placeholder="Add description1">
+            </div>
+            <div class="form-group">
+                <label for="company">Add description2</label>
+                <input type="text" 
+                [(ngModel)]="section.description2"
+                class="form-control" name="description2" id="description2" placeholder="Add description2">
+            </div>
+            <div class="row">
+                
+                <div class="col-sm-12 " *ngFor="let subsection of subsections,let i=index">
+                    
+                    <button type="submit" (click)="deleteSection(i)" class="btn btn-sm btn-danger">Delete section</button>
+                    <div class="card p-4 mt-4">
+                        <div class="form-group">
+                            <label for="title">Add title</label>
+                            <input type="text" 
+                            [(ngModel)]="subsection.title"
+                            class="form-control" name="title" id="title" placeholder="Add title">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Add description</label>
+                            <input type="text" 
+                            [(ngModel)]="subsection.description"
+                            class="form-control" name="description" id="description"
+                            placeholder="Add description">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Add image</label>
+                            <input type="text" 
+                            [(ngModel)]="subsection.image"
+                            class="form-control" name="image" id="image" placeholder="Add image">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Add percentage width of the section</label>
+                            <input type="text" 
+                            [(ngModel)]="subsection.percentage"
+                            class="form-control" name="percentage" id="percentage" placeholder="Add percentage">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <button type="button" (click)="addSection()" class="btn btn-sm btn-primary">Add subsections</button>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Form</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div><!--/.col-->
+    </div><!--/.row-->
+
+
+  </div>
+  
