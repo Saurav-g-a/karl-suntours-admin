@@ -3,9 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
+import { AddSectionDestinationComponent } from './views/add-section-destination/add-section-destination.component';
 import { CreateDestinationSectionComponent } from './views/create-destination-section/create-destination-section.component';
 import { CreateHomepageSectionComponent } from './views/create-homepage-section/create-homepage-section.component';
 import { CreateMetaDataComponent } from './views/create-meta-data/create-meta-data.component';
+import { DestinationSectionListComponent } from './views/destination-section-list/destination-section-list.component';
+import { DestinationUpdateSectionComponent } from './views/destination-update-section/destination-update-section.component';
 import { DestinationsComponent } from './views/destinations/destinations.component';
 
 import { P404Component } from './views/error/404.component';
@@ -94,6 +97,18 @@ export const routes: Routes = [
       {
         path: 'destination/update-destination/:id',
         component: UpdateDestinationSectionComponent
+      },
+      {
+        path: 'destination/add-section-destination/:id',
+        component: AddSectionDestinationComponent
+      },
+      {
+        path: 'destination/destination-section-list/:id',
+        component: DestinationSectionListComponent
+      },
+      {
+        path: 'destination/:id/section/:sectionId',
+        component: DestinationUpdateSectionComponent
       },
       {
         path: 'metadata/list',

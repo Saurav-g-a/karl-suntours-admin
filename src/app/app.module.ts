@@ -26,7 +26,7 @@ import { RegisterComponent } from './views/register/register.component';
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
-
+import { NgxEditorModule } from 'ngx-editor';
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -56,6 +56,9 @@ import { DestinationsComponent } from './views/destinations/destinations.compone
 import { CreateMetaDataComponent } from './views/create-meta-data/create-meta-data.component';
 import { MetaDataListComponent } from './views/meta-data-list/meta-data-list.component';
 import { MetaDataComponent } from './views/meta-data/meta-data.component';
+import { AddSectionDestinationComponent } from './views/add-section-destination/add-section-destination.component';
+import { DestinationSectionListComponent } from './views/destination-section-list/destination-section-list.component';
+import { DestinationUpdateSectionComponent } from './views/destination-update-section/destination-update-section.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -64,6 +67,7 @@ import { MetaDataComponent } from './views/meta-data/meta-data.component';
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
     AppFooterModule,
+    NgxEditorModule,
     AppHeaderModule,
     AppSidebarModule,
     HttpClientModule,
@@ -90,7 +94,10 @@ import { MetaDataComponent } from './views/meta-data/meta-data.component';
     DestinationsComponent,
     CreateMetaDataComponent,
     MetaDataListComponent,
-    MetaDataComponent
+    MetaDataComponent,
+    AddSectionDestinationComponent,
+    DestinationSectionListComponent,
+    DestinationUpdateSectionComponent
   ],
   providers: [
     {

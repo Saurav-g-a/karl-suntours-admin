@@ -53,4 +53,16 @@ export class DbioService {
   getAllDestinations(){
       return this.http.get(environment.url+"/destination/list")
   }
+  createDestinationSection(data){
+    return this.http.post(environment.url+"/destination/addsection",data)
+  }
+  getDestinationSections(data){
+    return this.http.get(environment.url+"/destination/"+data+"/sections")
+  }
+  getDestinationSection(data){
+    return this.http.get(environment.url+"/destination/section/"+data)
+  }
+  updateDestinationSection(data){
+    return this.http.post(environment.url+"/destination/updateSection/",data)
+  }
 }

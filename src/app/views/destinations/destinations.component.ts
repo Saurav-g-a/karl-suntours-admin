@@ -24,5 +24,10 @@ export class DestinationsComponent implements OnInit {
   edit(id){
     this.router.navigate(['destination/update-destination/'+id])
   }
-
+  add(id){
+    this.router.navigate(['destination/add-section-destination/'+id])
+  }
+  see(id){
+    this.router.navigate(['destination/destination-section-list/'+id])
+  }
 }

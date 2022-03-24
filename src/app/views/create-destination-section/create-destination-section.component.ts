@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DbioService } from 'src/app/services/dbio.service';
+import { Editor } from 'ngx-editor';
 
 @Component({
   selector: 'app-create-destination-section',
@@ -8,16 +9,15 @@ import { DbioService } from 'src/app/services/dbio.service';
   styleUrls: ['./create-destination-section.component.scss']
 })
 export class CreateDestinationSectionComponent implements OnInit {
+  
   constructor(
     private dbioService:DbioService,
     private router:Router
-  ) { }
+  ) {}
 
   slides:string[]=[]
   destination={
     title:"",
-    metatitle:"",
-    metadescription:"",
     type:"",
   }
 
@@ -45,14 +45,16 @@ export class CreateDestinationSectionComponent implements OnInit {
     this.slides.push("")
   }
   deleteSlide(i){
-    console.log(i)
     this.slides.splice(i,1)
   }
+  deleteSection(i){
+    this.subsections.splice(i,1)
+  }
   submit(){
-    this.destination['sections']=this.subsections
+    //this.destination['sections']=this.subsections
     this.destination['slides']=this.slides
     this.dbioService.createDestination(this.destination).subscribe(res=>{
-      this.router.navigate(['destination/update-destination/'+res['id']])
+      this.router.navigate(['destination/destinations'])
     })
   }
 }

@@ -27,24 +27,12 @@
                 class="form-control" name="title" id="title" placeholder="Section title">
             </div>
             <div class="form-group">
-              <label for="vat">Meta Title</label>
-              <input type="text" 
-              [(ngModel)]="destination.metatitle"
-              class="form-control" name="metatitle" id="metatitle" placeholder="Add metatitle">
-            </div>
-            <div class="form-group">
-                <label for="company">Meta Desciption</label>
-                <input type="text"
-                [(ngModel)]="destination.metadescription"
-                class="form-control" name="metadescription" id="metadescription" placeholder="Add metadescription">
-            </div>
-            <div class="form-group">
                 <label for="company">Add type</label>
                 <input type="text" 
                 [(ngModel)]="destination.type"
                 class="form-control" name="type" id="type" placeholder="Add type">
             </div>
-
+<!-- 
             <div class="row">
                 
                 <div class="col-sm-12 " *ngFor="let subsection of subsections,let i=index">
@@ -90,6 +78,9 @@
                 <div class="col-sm-12 text-center">
                     <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Destination</button>
                 </div>
+            </div> -->
+            <div class="col-sm-12 text-center">
+                <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Destination</button>
             </div>
           </div>
         </div>

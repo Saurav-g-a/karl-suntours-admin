@@ -23,7 +23,7 @@ export class UpdateDestinationSectionComponent implements OnInit {
     this.destinationId = this.activatedRoute.snapshot.params.id
     this.dbioService.getDestination(this.destinationId).subscribe(res=>{
       this.destination = res
-      this.subsections = res['sections']
+      //this.subsections = res['sections']
       this.slides = res['slides']
     })
   }
@@ -41,7 +41,7 @@ export class UpdateDestinationSectionComponent implements OnInit {
     this.subsections.splice(i,1)
   }
   submit(){
-    this.destination['sections']=this.subsections
+    //this.destination['sections']=this.subsections
     this.destination['slides']=this.slides
     this.dbioService.updateDestination(this.destination).subscribe(res=>{
       console.log(res)
