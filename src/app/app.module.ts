@@ -59,6 +59,12 @@ import { MetaDataComponent } from './views/meta-data/meta-data.component';
 import { AddSectionDestinationComponent } from './views/add-section-destination/add-section-destination.component';
 import { DestinationSectionListComponent } from './views/destination-section-list/destination-section-list.component';
 import { DestinationUpdateSectionComponent } from './views/destination-update-section/destination-update-section.component';
+import { CreateHolidayComponent } from './views/holiday/create-holiday/create-holiday.component';
+import { CreateHolidaySectionComponent } from './views/holiday/create-holiday-section/create-holiday-section.component';
+import { UpdateHolidaySectionComponent } from './views/holiday/update-holiday-section/update-holiday-section.component';
+import { UpdateHolidayComponent } from './views/holiday/update-holiday/update-holiday.component';
+import { HolidayListComponent } from './views/holiday/holiday-list/holiday-list.component';
+import { HolidaySectionListComponent } from './views/holiday/holiday-section-list/holiday-section-list.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -97,7 +103,13 @@ import { DestinationUpdateSectionComponent } from './views/destination-update-se
     MetaDataComponent,
     AddSectionDestinationComponent,
     DestinationSectionListComponent,
-    DestinationUpdateSectionComponent
+    DestinationUpdateSectionComponent,
+    CreateHolidayComponent,
+    CreateHolidaySectionComponent,
+    UpdateHolidaySectionComponent,
+    UpdateHolidayComponent,
+    HolidayListComponent,
+    HolidaySectionListComponent
   ],
   providers: [
     {

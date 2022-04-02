@@ -76,6 +76,25 @@ export const navItems: INavData[] = [
       },
     ]
   },
+  {
+    name: 'Holiday',
+    url: '/holiday',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    },
+    children:[
+      {
+        name:'Holiday List',
+        url:'holiday/holidays'
+      },
+      {
+        name:'Create Destination',
+        url:'holiday/create-holiday'
+      },
+    ]
+  },
   // {
   //   title: true,
   //   name: 'Theme'

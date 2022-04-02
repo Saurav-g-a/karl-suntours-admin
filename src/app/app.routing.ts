@@ -13,6 +13,13 @@ import { DestinationsComponent } from './views/destinations/destinations.compone
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
+import { CreateHolidaySectionComponent } from './views/holiday/create-holiday-section/create-holiday-section.component';
+import { CreateHolidayComponent } from './views/holiday/create-holiday/create-holiday.component';
+//import { HolidayCreateComponent } from './views/holiday/holiday-create/holiday-create.component';
+import { HolidayListComponent } from './views/holiday/holiday-list/holiday-list.component';
+import { HolidaySectionListComponent } from './views/holiday/holiday-section-list/holiday-section-list.component';
+import { UpdateHolidaySectionComponent } from './views/holiday/update-holiday-section/update-holiday-section.component';
+import { UpdateHolidayComponent } from './views/holiday/update-holiday/update-holiday.component';
 import { HomepageSectionsComponent } from './views/homepage-sections/homepage-sections.component';
 import { LoginComponent } from './views/login/login.component';
 import { MetaDataListComponent } from './views/meta-data-list/meta-data-list.component';
@@ -110,6 +117,31 @@ export const routes: Routes = [
         path: 'destination/:id/section/:sectionId',
         component: DestinationUpdateSectionComponent
       },
+      {
+        path: 'holiday/:id/section/:sectionId',
+        component: UpdateHolidaySectionComponent
+      },
+      {
+        path: 'holiday/holidays',
+        component: HolidayListComponent
+      },
+      {
+        path: 'holiday/create-holiday',
+        component: CreateHolidayComponent
+      },
+      {
+        path: 'holiday/update-holiday/:id',
+        component: UpdateHolidayComponent
+      },
+      {
+        path: 'holiday/create-holiday-section/:id',
+        component: CreateHolidaySectionComponent
+      },
+      {
+        path: 'holiday/holiday-section-list/:id',
+        component: HolidaySectionListComponent
+      },
+      
       {
         path: 'metadata/list',
         component: MetaDataListComponent

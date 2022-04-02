@@ -65,4 +65,31 @@ export class DbioService {
   updateDestinationSection(data){
     return this.http.post(environment.url+"/destination/updateSection/",data)
   }
+
+
+
+  createHoliday(section){
+    return this.http.post(environment.url+"/holiday/create",section)
+  }
+  getHoliday(id){
+    return this.http.get(environment.url+"/holiday/"+id)
+  }
+  updateHoliday(data){
+    return this.http.post(environment.url+"/holiday/update",data)
+  }
+  getAllHolidays(){
+      return this.http.get(environment.url+"/holiday/list")
+  }
+  createHolidaySection(data){
+    return this.http.post(environment.url+"/holiday/addsection",data)
+  }
+  getHolidaySections(data){
+    return this.http.get(environment.url+"/holiday/"+data+"/sections")
+  }
+  getHolidaySection(data){
+    return this.http.get(environment.url+"/holiday/section/"+data)
+  }
+  updateHolidaySection(data){
+    return this.http.post(environment.url+"/holiday/updateSection/",data)
+  }
 }
