@@ -28,7 +28,7 @@ getUser(){
   return this.http.get(environment.url+"/users")
 }
 updateUserData(data){
-  return this.http.post(environment.url+"/update/user",data)
+  return this.http.post(environment.url+"/users/update",data)
 }
   getHomepageSection(id){
     return this.http.get(environment.url+"/homepage/section/"+id)

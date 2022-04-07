@@ -27,6 +27,28 @@
                 [(ngModel)]="holiday.title"
                 class="form-control" name="title" id="title" placeholder="Section title">
             </div>
+          
+                <div class="form-group">
+                  <label for="company">Meta Title</label>
+                  <input type="text" 
+                  [(ngModel)]="holiday.metaTitle"
+                  required
+                  class="form-control" name="title" id="title" placeholder="meta title">
+                </div>
+                <div class="form-group">
+                    <label for="company">Meta Description</label>
+                    <input type="text" 
+                    [(ngModel)]="holiday.metaDescription"
+                    class="form-control" name="description" id="description" placeholder="meta description">
+                </div>
+    
+                <div class="form-group">
+                    <label for="vat">Canonical</label>
+                    <input type="text" 
+                    [(ngModel)]="holiday.canonical"
+                    class="form-control" name="canonical" id="canonical" placeholder="tycanonicalpe">
+                  </div>
+        
             <!-- <div class="form-group">
                 <label for="company">Add type</label>
                 <input type="text" 

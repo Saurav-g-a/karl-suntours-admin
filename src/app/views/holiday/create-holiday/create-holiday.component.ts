@@ -18,6 +18,9 @@ export class CreateHolidayComponent implements OnInit {
   holiday={
     title:"",
     type:"",
+    metaTitle:'',
+    metaDescription:'',
+    canonical:''
   }
 
   subsections:{ 

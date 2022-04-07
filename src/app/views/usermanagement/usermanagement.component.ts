@@ -39,7 +39,10 @@ this.dbioService.createUser(this.user).subscribe((res:any)=>{
 })
   }
   updateUser(){
-    this.user.id=this.userId
+    delete this.user.id
+    delete this.user.isEmailVerified
+    this.user.userId=this.userId
+    console.log(this.user)
     this.dbioService.updateUserData(this.user).subscribe((res:any)=>{
       if(res){
         this.route.navigate(['/usermangement/userList'])
