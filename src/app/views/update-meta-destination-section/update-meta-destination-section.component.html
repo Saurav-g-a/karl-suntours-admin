@@ -3,40 +3,32 @@
         <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
-            <strong>Add Meta Data </strong>
-         
+            <strong>Edit Meta Of Destination </strong>
+            
           </div>
           <div class="card-body">
+
             <div class="form-group">
               <label for="company">Meta Title</label>
               <input type="text" 
-              [(ngModel)]="meta.metatitle"
+              [(ngModel)]="metaData.metaTitle"
               required
               class="form-control" name="title" id="title" placeholder="meta title">
             </div>
             <div class="form-group">
                 <label for="company">Meta Description</label>
                 <input type="text" 
-                [(ngModel)]="meta.metadescription"
+                [(ngModel)]="metaData.metaDescription"
                 class="form-control" name="description" id="description" placeholder="meta description">
             </div>
-
             <div class="form-group">
                 <label for="vat">Canonical</label>
                 <input type="text" 
-                [(ngModel)]="meta.canonical"
+                [(ngModel)]="metaData.canonical"
                 class="form-control" name="canonical" id="canonical" placeholder="tycanonicalpe">
               </div>
-        
-           
-           
-            <div class="row">
-                
-               
-                
-                <div class="col-sm-12 text-center">
-                    <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Form</button>
-                </div>
+            <div class="col-sm-12 text-center">
+                <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Update Meta Destination</button>
             </div>
           </div>
         </div>
@@ -45,4 +37,3 @@
 
 
   </div>
-  

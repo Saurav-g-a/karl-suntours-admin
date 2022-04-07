@@ -26,12 +26,12 @@
                 class="form-control" name="title" id="title" placeholder="Section title">
             </div>
             
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="company">Add type</label>
                 <input type="text" 
                 [(ngModel)]="destination.type"
                 class="form-control" name="type" id="type" placeholder="Add type">
-            </div>
+            </div> -->
 
             <!-- <div class="row">
                 
@@ -80,6 +80,13 @@
                     <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Form</button>
                 </div>
             </div> -->
+            <div class="form-check">
+                <input type="checkbox" 
+                [(ngModel)]="destination.shownOnDashboard"
+                class="form-check-input" name="shownOnDashboard" id="shownOnDashboard" >
+                <label for="company">Shown on dashboard</label>
+               
+            </div>
             <div class="col-sm-12 text-center">
                 <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Form</button>
             </div>

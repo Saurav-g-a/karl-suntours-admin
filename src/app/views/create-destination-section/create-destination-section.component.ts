@@ -18,7 +18,10 @@ export class CreateDestinationSectionComponent implements OnInit {
   slides:string[]=[]
   destination={
     title:"",
-    type:"",
+    shownOnDashboard:false,
+    canonical:'',
+    metaDescription:'',
+    metaTitle:''
   }
 
   subsections:{ 

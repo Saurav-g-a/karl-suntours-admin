@@ -27,11 +27,14 @@ import { MetaDataComponent } from './views/meta-data/meta-data.component';
 import { RegisterComponent } from './views/register/register.component';
 import { UpdateDestinationSectionComponent } from './views/update-destination-section/update-destination-section.component';
 import { UpdateHomepageSectionComponent } from './views/update-homepage-section/update-homepage-section.component';
+import { UpdateMetaDestinationSectionComponent } from './views/update-meta-destination-section/update-meta-destination-section.component';
+import { UserListComponent } from './views/user-list/user-list.component';
+import { UsermanagementComponent } from './views/usermanagement/usermanagement.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'destination/destinations',
     pathMatch: 'full',
   },
   {
@@ -110,6 +113,10 @@ export const routes: Routes = [
         component: AddSectionDestinationComponent
       },
       {
+        path: 'destination/update-meta-destination/:id',
+        component: UpdateMetaDestinationSectionComponent
+      },
+      {
         path: 'destination/destination-section-list/:id',
         component: DestinationSectionListComponent
       },
@@ -124,6 +131,18 @@ export const routes: Routes = [
       {
         path: 'holiday/holidays',
         component: HolidayListComponent
+      },
+      {
+        path:'usermangement/create-user',
+        component:UsermanagementComponent
+      },
+      {
+       path:'usermangement/userList',
+       component:UserListComponent
+      },
+       {
+        path:'usermangement/edit-user/:id',
+        component:UsermanagementComponent
       },
       {
         path: 'holiday/create-holiday',
@@ -148,7 +167,7 @@ export const routes: Routes = [
       },
       
       {
-        path: 'metadata/create',
+        path: 'homepage/createMeta',
         component: CreateMetaDataComponent
       },
       {

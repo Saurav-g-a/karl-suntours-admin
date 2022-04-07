@@ -8,11 +8,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DbioService {
 
   constructor(private http : HttpClient) { }
+userLogin(data){
+  return this.http.post(environment.url+"/auth/login",data)
+}
+homePageMeta(data){
+  return this.http.post(environment.url+"/pagemeta/createMeta",data)
+}
 
   createHomepageSection(section){
     return this.http.post(environment.url+"/homepage/createSection",section)
   }
-
+  getUserDetails(id){
+    return this.http.get(environment.url+"/users/"+id)
+  }
+   createUser(data){
+  return this.http.post(environment.url+"/users",data)
+}
+getUser(){
+  return this.http.get(environment.url+"/users")
+}
+updateUserData(data){
+  return this.http.post(environment.url+"/update/user",data)
+}
   getHomepageSection(id){
     return this.http.get(environment.url+"/homepage/section/"+id)
   }
@@ -27,6 +44,13 @@ export class DbioService {
 
   getPageMeta(type){
     return this.http.get(environment.url+"/pagemeta/"+type)
+  }
+  getDestinationMetaData(id)
+  {
+    return this.http.get(environment.url+'/destination/destinationMeta/'+id)
+  }
+  updateDestinationMetaData(data){
+    return this.http.post(environment.url+"/destination/update",data)
   }
  updateMetaData(meta){
     return this.http.post(environment.url+"/pagemeta/updateMeta",meta)

@@ -1,39 +1,39 @@
 import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
-  {
-    name: 'Dashboard',
-    url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
-  },
-  {
-    name: 'MetaData',
-    url: '/metadata',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    },
-    children:[
-      {
-        name:'Create Meta Data',
-        url:'metadata/create'
-      },
-      // {
-      //   name:'Update Section',
-      //   url:'homepage/update-section'
-      // },
-      {
-        name:'List Meta Data',
-        url:'metadata/list'
-      },
+  // {
+  //   name: 'Dashboard',
+  //   url: '/dashboard',
+  //   icon: 'icon-speedometer',
+  //   badge: {
+  //     variant: 'info',
+  //     text: 'NEW'
+  //   }
+  // },
+  // {
+  //   name: 'MetaData',
+  //   url: '/metadata',
+  //   icon: 'icon-speedometer',
+  //   badge: {
+  //     variant: 'info',
+  //     text: 'NEW'
+  //   },
+  //   children:[
+  //     {
+  //       name:'Create Meta Data',
+  //       url:'metadata/create'
+  //     },
+  //     // {
+  //     //   name:'Update Section',
+  //     //   url:'homepage/update-section'
+  //     // },
+  //     {
+  //       name:'List Meta Data',
+  //       url:'metadata/list'
+  //     },
      
-    ]
-  },
+  //   ]
+  // },
   {
     name: 'Homepage',
     url: '/homage',
@@ -55,6 +55,13 @@ export const navItems: INavData[] = [
         name:'Sections',
         url:'homepage/sections'
       },
+            {
+              name:'Create Meta Data',
+              url:'homepage/createMeta'
+            },
+
+
+
     ]
   },
   {
@@ -92,6 +99,21 @@ export const navItems: INavData[] = [
       {
         name:'Create Destination',
         url:'holiday/create-holiday'
+      },
+    ]
+  },
+  {
+    name: 'User Mangement',
+    url: '/usermangement',
+    icon: 'icon-speedometer',
+    children:[
+      {
+        name:'Users List',
+        url:'usermangement/userList'
+      },
+      {
+        name:'Create user',
+        url:'usermangement/create-user'
       },
     ]
   },

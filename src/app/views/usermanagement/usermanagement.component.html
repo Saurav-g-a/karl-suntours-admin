@@ -1,0 +1,57 @@
+
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>{{heading}} </strong>
+         
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Name</label>
+              <input type="text" 
+              [(ngModel)]="user.name"
+              required
+              class="form-control" name="name" id="title" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="company">Email</label>
+                <input type="email" 
+                [(ngModel)]="user.email"
+                class="form-control" name="email" id="email" placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label for="vat">Password</label>
+                <input type="password" 
+                [(ngModel)]="user.password"
+                class="form-control" name="password" id="password" placeholder="Enter Password">
+              </div>
+              <div class="form-group">
+                <label for="vat">Role</label>
+                <input type="text" 
+                [(ngModel)]="user.role"
+                class="form-control" name="role" id="role" placeholder="Enter Role">
+              </div>
+           
+           
+            <div class="row">
+                
+               
+                
+                <div class="col-sm-12 text-center" *ngIf="!userId">
+                    <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Create User</button>
+                </div>
+                <div class="col-sm-12 text-center" *ngIf="userId">
+                    <button type="submit" (click)="updateUser()" class="btn btn-sm btn-success">Update User</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div><!--/.col-->
+    </div><!--/.row-->
+
+
+  </div>
+  

@@ -18,7 +18,6 @@ export class CreateMetaDataComponent implements OnInit {
    
     metatitle:"",
     metadescription:"",
-    type:"",
     canonical:"",
    
   }
@@ -28,10 +27,12 @@ export class CreateMetaDataComponent implements OnInit {
 
 
   submit(){
-  
-    this.dbioService.createMetaData(this.meta).subscribe(res=>{
-      this.router.navigate(['homepage/update-section/'+res['id']])
-    })
+  console.log(this.meta)
+  this.dbioService.homePageMeta(this.meta).subscribe((res:any)=>{
+    console.log(res)
+    this.router.navigate(['/destination/destinations'])
+  }
+  )
   }
 
 }

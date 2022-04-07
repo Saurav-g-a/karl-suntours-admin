@@ -30,4 +30,7 @@ export class DestinationsComponent implements OnInit {
   see(id){
     this.router.navigate(['destination/destination-section-list/'+id])
   }
+  meta(id){
+    this.router.navigate(['destination/update-meta-destination/'+id])
+  }
 }

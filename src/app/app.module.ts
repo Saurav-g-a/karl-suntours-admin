@@ -65,6 +65,9 @@ import { UpdateHolidaySectionComponent } from './views/holiday/update-holiday-se
 import { UpdateHolidayComponent } from './views/holiday/update-holiday/update-holiday.component';
 import { HolidayListComponent } from './views/holiday/holiday-list/holiday-list.component';
 import { HolidaySectionListComponent } from './views/holiday/holiday-section-list/holiday-section-list.component';
+import { UpdateMetaDestinationSectionComponent } from './views/update-meta-destination-section/update-meta-destination-section.component';
+import { UsermanagementComponent } from './views/usermanagement/usermanagement.component';
+import { UserListComponent } from './views/user-list/user-list.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -109,7 +112,10 @@ import { HolidaySectionListComponent } from './views/holiday/holiday-section-lis
     UpdateHolidaySectionComponent,
     UpdateHolidayComponent,
     HolidayListComponent,
-    HolidaySectionListComponent
+    HolidaySectionListComponent,
+    UpdateMetaDestinationSectionComponent,
+    UsermanagementComponent,
+    UserListComponent
   ],
   providers: [
     {
