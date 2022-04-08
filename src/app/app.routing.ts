@@ -30,12 +30,13 @@ import { UpdateHomepageSectionComponent } from './views/update-homepage-section/
 import { UpdateMetaDestinationSectionComponent } from './views/update-meta-destination-section/update-meta-destination-section.component';
 import { UserListComponent } from './views/user-list/user-list.component';
 import { UsermanagementComponent } from './views/usermanagement/usermanagement.component';
-
+import { AuthGuard } from './auth.guard';
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'destination/destinations',
     pathMatch: 'full',
+   
   },
   {
     path: '404',
@@ -76,6 +77,7 @@ export const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
+    canActivate:[AuthGuard],
     data: {
       title: 'Home'
     },
