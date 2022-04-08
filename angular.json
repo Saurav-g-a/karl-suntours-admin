@@ -32,7 +32,7 @@
               "src/assets",
               "src/assets/img/login.png",
               "src/assets/img/logo.png"
-            ],
+            ], 
             "styles": [
               "node_modules/@coreui/icons/css/free.css",
               "node_modules/flag-icon-css/css/flag-icon.css",
