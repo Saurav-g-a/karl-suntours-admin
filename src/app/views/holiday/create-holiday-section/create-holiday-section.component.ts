@@ -41,14 +41,41 @@ export class CreateHolidaySectionComponent implements OnInit {
       this.router.navigate(['holiday/holiday-section-list/'+this.holidayId])
     })
   }
-  addSection(){
+  addSection(res:any){
     this.subsections.push({
       "title": "",
       "description": "",
-      "image": "",
+      "image": res,
       "percentage": "",
       "type":""
     })
   }
-
+  fileChangeEvent(event,type){
+    let _this=this
+      let file = event.target.files[0];
+      console.log(file.file)
+      _this.dbioService.uploadImage(event.target).subscribe((res:any)=>{
+        console.log(res)
+        if(type=='section'){
+          this.sections.image=res
+        }
+        else{
+          this.addSection(res)
+        }
+      })
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        //me.modelvalue = reader.result;
+        console.log(reader.result);
+        // let data={
+        //   imageUrl:reader.result
+        // }
+  
+      };
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+      };
+  
+  }
 }

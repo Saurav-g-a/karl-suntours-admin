@@ -11,6 +11,10 @@ export class DbioService {
 userLogin(data){
   return this.http.post(environment.url+"/auth/login",data)
 }
+uploadImage(image){
+  console.log(image)
+  return this.http.post(environment.url+"/upload/images",image)
+}
 homePageMeta(data){
   return this.http.post(environment.url+"/pagemeta/createMeta",data)
 }

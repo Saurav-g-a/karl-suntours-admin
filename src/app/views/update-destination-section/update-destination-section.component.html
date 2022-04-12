@@ -3,7 +3,7 @@
         <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
-            <strong>Add Section </strong>
+            <strong>Edit Destination </strong>
             <small>Form</small>
           </div>
           <div class="card-body">
@@ -12,8 +12,12 @@
                 <div class="form-group">
                     <label for="company">Slide Image</label>
                     <input type="file" 
-                    [(ngModel)]="slides[i]"
+                    (change)="fileChangeEvent($event,i)"
+                   
                     class="form-control" placeholder="Slide Image url">
+                    <div *ngIf="slide">
+                        <img [src]='slide' height="10%" width="10%">
+                        </div>
                 </div>
             </div>
             <div class="col-sm-12 ">
@@ -88,7 +92,7 @@
                
             </div>
             <div class="col-sm-12 text-center">
-                <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Form</button>
+                <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Edit Destination</button>
             </div>
           </div>
         </div>
