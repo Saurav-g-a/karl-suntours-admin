@@ -29,6 +29,7 @@
                             <div class="form-group">
                                 <label for="image">Add image</label>
                                 <input type="file" 
+                                (change)="fileChangeEvent($event,'section')"
                                 [(ngModel)]="sections.image"
                                 class="form-control" name="image" id="image" placeholder="Add image">
                             </div>
@@ -69,6 +70,7 @@
                         <div class="form-group">
                             <label for="image">Add image</label>
                             <input type="file" 
+                            (change)="fileChangeEvent($event,subsection)"
                             [(ngModel)]="subsection.image"
                             class="form-control" name="image" id="image" placeholder="Add image">
                         </div>
@@ -87,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 ">
-                    <button type="button" (click)="addSection()" class="btn btn-sm btn-primary">Add subsections</button>
+                    <button type="button" (click)="addSection('')" class="btn btn-sm btn-primary">Add subsections</button>
                 </div>
                
             

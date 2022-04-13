@@ -16,9 +16,10 @@ export class CreateMetaDataComponent implements OnInit {
 
   meta:any={
    
-    metatitle:"",
-    metadescription:"",
+    metaTitle:"",
+    metaDescription:"",
     canonical:"",
+    type:"Homepage"
    
   }
 

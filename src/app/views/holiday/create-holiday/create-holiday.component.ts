@@ -59,5 +59,28 @@ export class CreateHolidayComponent implements OnInit {
       this.router.navigate(['holiday/holidays'])
     })
   }
+  fileChangeEvent(event,i){
+    let _this=this
+      let file = event.target.files[0];
+      console.log(file)
 
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        // me.modelvalue = reader.result;
+        console.log(reader.result);
+        let data={
+          data:reader.result,
+          fileName:file.name  
+        }
+        _this.dbioService.uploadImage(data).subscribe((res:any)=>{
+          console.log(res)
+      _this.slides[i]=res.url
+        })
+      };
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+      };
+  
+  }
 }

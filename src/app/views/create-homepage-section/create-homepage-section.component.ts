@@ -23,7 +23,7 @@ export class CreateHomepageSectionComponent implements OnInit {
     description1:"",
     description2:""
   }
-
+  imageUrl=''
   subsections:{ "title": string,
   "description": string,
   "image": string,
@@ -32,11 +32,11 @@ export class CreateHomepageSectionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSection(){
+  addSection(res:any){
     this.subsections.push({
       "title": "",
       "description": "",
-      "image": "",
+      "image": res,
       "percentage": ""
     })
   }
@@ -49,5 +49,35 @@ export class CreateHomepageSectionComponent implements OnInit {
     this.dbioService.createHomepageSection(this.section).subscribe(res=>{
       this.router.navigate(['homepage/sections'])
     })
+  }
+  fileChangeEvent(event,i){
+    let _this=this
+      let file = event.target.files[0];
+      console.log(file)
+
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        // me.modelvalue = reader.result;
+        console.log(reader.result);
+        let data={
+          data:reader.result,
+          fileName:file.name  
+        }
+        _this.dbioService.uploadImage(data).subscribe((res:any)=>{
+          console.log(res)
+          // _this.section['background']=res.url
+          if(i=='section'){
+            _this.section['background']=res.url
+          }
+          else{
+        _this.subsections[i]['image']=res.url
+          }
+        })
+      };
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+      };
+  
   }
 }

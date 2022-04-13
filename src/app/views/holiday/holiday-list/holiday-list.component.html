@@ -10,14 +10,12 @@
               <thead>
                 <tr>
                   <th>Holiday Title</th>
-                  <th>Holiday type</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let section of holidays">
                   <td>{{section.title}}</td>
-                  <td>{{section.type}}</td>
                   <td>
                     <button type="button" (click)="edit(section.id)" class="btn btn-sm btn-primary">Edit</button>
                     <button type="button" (click)="add(section.id)" class="ml-2 btn btn-sm btn-primary">Add Sections</button>

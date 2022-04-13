@@ -22,17 +22,21 @@
                 class="form-control" name="email" id="email" placeholder="Enter email">
             </div>
 
-            <div class="form-group">
-                <label for="vat">Password</label>
+            <div *ngIf="!userId" class="form-group">
+                <label for="vat">Password<span>  (8 Digit Password Required and 1 letter and 1 Number )</span></label>
                 <input type="password" 
                 [(ngModel)]="user.password"
                 class="form-control" name="password" id="password" placeholder="Enter Password">
               </div>
               <div class="form-group">
                 <label for="vat">Role</label>
-                <input type="text" 
+                <select  class="form-control" name="role" id="role"  [(ngModel)]="user.role" >
+                  <option Value="user">User</option>
+                  <option Value="admin">Admin</option>
+                </select>
+                <!-- <input type="text" 
                 [(ngModel)]="user.role"
-                class="form-control" name="role" id="role" placeholder="Enter Role">
+                class="form-control" name="role" id="role" placeholder="Enter Role"> -->
               </div>
            
            
