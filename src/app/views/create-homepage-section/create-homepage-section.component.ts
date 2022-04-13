@@ -47,7 +47,7 @@ export class CreateHomepageSectionComponent implements OnInit {
   submit(){
     this.section['sections']=this.subsections
     this.dbioService.createHomepageSection(this.section).subscribe(res=>{
-      this.router.navigate(['homepage/update-section/'+res['id']])
+      this.router.navigate(['homepage/sections'])
     })
   }
 }
