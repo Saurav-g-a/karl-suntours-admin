@@ -16,7 +16,7 @@ uploadImage(image){
   return this.http.post(environment.url+"/upload/images",image)
 }
 homePageMeta(data){
-  return this.http.post(environment.url+"/pagemeta/createMeta",data)
+  return this.http.post(environment.url+"/pagemeta/updateMeta",data)
 }
 
   createHomepageSection(section){
