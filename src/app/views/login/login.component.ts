@@ -5,6 +5,7 @@ import { DbioService } from 'src/app/services/dbio.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'login.component.html',
+  styleUrls: ['./login.component.scss']
   
 })
 export class LoginComponent implements OnInit{
