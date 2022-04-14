@@ -16,6 +16,9 @@ export class HomepageSectionsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+   this.sectionList()
+  }
+  sectionList(){
     this.dbioService.getHomePage().subscribe(res=>{
       this.homepage  = res
     })
@@ -23,5 +26,14 @@ export class HomepageSectionsComponent implements OnInit {
   edit(id){
     this.router.navigate(['homepage/update-section/'+id])
   }
+delete(id){
+console.log(id)
 
+this.dbioService.deleteHomepageSection(id).subscribe((res:any)=>{
+  if(res.success=true){
+    this.sectionList()
+  }
+ 
+})
+}
 }

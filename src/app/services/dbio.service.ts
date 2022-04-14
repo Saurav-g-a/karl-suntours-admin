@@ -11,6 +11,12 @@ export class DbioService {
 userLogin(data){
   return this.http.post(environment.url+"/auth/login",data)
 }
+deleteHomepageSection(id){
+  return this.http.delete(environment.url+`/homepage/deleteHomePageSection/${id}`)
+}
+deleteDestinationpageSection(destinationId,sectionId){
+  return this.http.delete(environment.url+`/destination/deleteDestinationSection/${destinationId}/${sectionId}`,)
+}
 uploadImage(image){
   console.log(image)
   return this.http.post(environment.url+"/upload/images",image)

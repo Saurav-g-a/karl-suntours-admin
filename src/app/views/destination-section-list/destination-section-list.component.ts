@@ -18,7 +18,10 @@ export class DestinationSectionListComponent implements OnInit {
 
   ngOnInit(): void {
     this.destinationId =  this.activatedRoute.snapshot.params.id
-     this.dbioService.getDestinationSections(this.destinationId).subscribe(res=>[
+   this.sectionList()
+  }
+  sectionList(){
+    this.dbioService.getDestinationSections(this.destinationId).subscribe(res=>[
       this.sections =res
      ])
   }
@@ -27,5 +30,19 @@ export class DestinationSectionListComponent implements OnInit {
   }
   add(){
     this.router.navigate(['destination/add-section-destination/'+this.destinationId+'/'])
+  }
+  delete(id){
+    console.log(id)
+    let data ={
+      destinationId:this.destinationId,
+      sectionId:id
+    }
+    this.dbioService.deleteDestinationpageSection(this.destinationId,id).subscribe((res:any)=>{
+      console.log(res)
+      if(res.success==true){
+        this.sectionList()
+      }
+    })
+ 
   }
 }
