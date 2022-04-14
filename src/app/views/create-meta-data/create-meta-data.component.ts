@@ -19,7 +19,7 @@ export class CreateMetaDataComponent implements OnInit {
     metaTitle:"",
     metaDescription:"",
     canonical:"",
-    type:"Homepage"
+    type:"homepage"
    
   }
 
