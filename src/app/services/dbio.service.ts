@@ -15,7 +15,7 @@ export class DbioService {
     return this.http.delete(environment.url + `/homepage/deleteHomePageSection/${id}`)
   }
   deleteHolidayPageSection(id) {
-    return this.http.delete(environment.url + `/holiday/deleteholidayPageSection/${id}`)
+    return this.http.delete(environment.url + `/holiday/deleteHolidaySection/${id}`)
   }
   deleteDestinationpageSection(destinationId, sectionId) {
     return this.http.delete(environment.url + `/destination/deleteDestinationSection/${destinationId}/${sectionId}`,)
