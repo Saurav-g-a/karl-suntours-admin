@@ -32,6 +32,9 @@
                                 (change)="fileChangeEvent($event,'section')"
                                 [(ngModel)]="sections.image"
                                 class="form-control" name="image" id="image" placeholder="Add image">
+                                <div *ngIf="sections.image != ''">
+                                    <img [src]="sections.image" width="10%" height="10%">
+                                      </div>
                             </div>
                             <div class="form-group">
                                 <label for="title">Add percentage width of the section</label>
@@ -39,12 +42,12 @@
                                 [(ngModel)]="sections.percentage"
                                 class="form-control" name="percentage" id="percentage" placeholder="Add percentage">
                             </div>
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <label for="company">Add type</label>
                                 <input type="text" 
                                 [(ngModel)]="sections.type"
                                 class="form-control" name="type" id="type" placeholder="Add type">
-                            </div> -->
+                            </div>
                         </div>
                     </div>
 
@@ -70,9 +73,12 @@
                         <div class="form-group">
                             <label for="image">Add image</label>
                             <input type="file" 
-                            (change)="fileChangeEvent($event,subsection)"
+                            (change)="fileChangeEvent($event,i)"
                             [(ngModel)]="subsection.image"
                             class="form-control" name="image" id="image" placeholder="Add image">
+                            <div *ngIf="subsection.image != ''">
+                                <img [src]="subsection.image" width="10%" height="10%">
+                                  </div>
                         </div>
                         <div class="form-group">
                             <label for="title">Add percentage width of the section</label>
@@ -80,12 +86,12 @@
                             [(ngModel)]="subsection.percentage"
                             class="form-control" name="percentage" id="percentage" placeholder="Add percentage">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="company">Add type</label>
                             <input type="text" 
                             [(ngModel)]="subsection.type"
                             class="form-control" name="type" id="type" placeholder="Add type">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-sm-12 ">

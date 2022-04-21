@@ -24,13 +24,17 @@ export class CreateMetaDataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getMetaData()
   }
 
-
+getMetaData(){
+this.dbioService.getHomePageMeta().subscribe((res:any)=>{
+  this.meta={...res}
+})
+}
   submit(){
   console.log(this.meta)
   this.dbioService.homePageMeta(this.meta).subscribe((res:any)=>{
-    console.log(res)
     this.router.navigate(['/destination/destinations'])
   }
   )

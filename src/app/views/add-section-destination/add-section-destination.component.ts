@@ -78,7 +78,6 @@ export class AddSectionDestinationComponent implements OnInit {
   //     };
   
   // }
-
   fileChangeEvent(event,i){
     let _this=this
       let file = event.target.files[0];

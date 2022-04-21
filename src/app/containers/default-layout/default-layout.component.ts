@@ -20,4 +20,7 @@ export class DefaultLayoutComponent {
 localStorage.removeItem('userDetails')
     this.route.navigate(['/login'])
       }
+      home(){
+        this.route.navigate(['/destination/destinations'])
+      }
 }

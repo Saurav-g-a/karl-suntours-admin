@@ -37,7 +37,7 @@ export class DestinationUpdateSectionComponent implements OnInit {
     this.subsections.push({
       "title": "",
       "description": "",
-      "image": res,
+      "image": '',
       "percentage": "",
       "type":""
     })
@@ -54,28 +54,61 @@ export class DestinationUpdateSectionComponent implements OnInit {
       this.router.navigate(['destination/destination-section-list/'+this.destinationId])
     })
   }
-  fileChangeEvent(event,type){
+  // fileChangeEvent(event,type){
+  //   let _this=this
+  //     let file = event.target.files[0];
+  //     console.log(file.file)
+  //     _this.dbioService.uploadImage(event.target).subscribe((res:any)=>{
+  //       console.log(res)
+  //       if(type=='section'){
+  //         this.sections.image=res
+  //       }
+  //       else{
+  //         this.addSection(res)
+  //       }
+  //     })
+  //     let reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = function () {
+  //       //me.modelvalue = reader.result;
+  //       console.log(reader.result);
+  //       // let data={
+  //       //   imageUrl:reader.result
+  //       // }
+  
+  //     };
+  //     reader.onerror = function (error) {
+  //       console.log('Error: ', error);
+  //     };
+  
+  // }
+  fileChangeEvent(event,i){
+  
     let _this=this
       let file = event.target.files[0];
-      console.log(file.file)
-      _this.dbioService.uploadImage(event.target).subscribe((res:any)=>{
-        console.log(res)
-        if(type=='section'){
-          this.sections.image=res
-        }
-        else{
-          this.addSection(res)
-        }
-      })
+      console.log(file)
+
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function () {
-        //me.modelvalue = reader.result;
+        // me.modelvalue = reader.result;
         console.log(reader.result);
-        // let data={
-        //   imageUrl:reader.result
-        // }
+        let data={
+          data:reader.result,
+          fileName:file.name  
+        }
+        _this.dbioService.uploadImage(data).subscribe((res:any)=>{
+          console.log(i)
+          if(i=='section' && res.url){
+           _this.sections['image']=res.url
+           console.log(_this.sections)
+          }
+          if(res.url && i!='section'){
+            console.log(i)
+           _this.subsections[i]['image']=res.url
+          }
   
+        })
       };
       reader.onerror = function (error) {
         console.log('Error: ', error);

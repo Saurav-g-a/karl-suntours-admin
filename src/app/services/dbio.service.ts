@@ -27,7 +27,9 @@ export class DbioService {
   homePageMeta(data) {
     return this.http.post(environment.url + "/pagemeta/updateMeta", data)
   }
-
+getHomePageMeta(){
+  return this.http.get(environment.url+'/pagemeta/homepage')
+}
   createHomepageSection(section) {
     return this.http.post(environment.url + "/homepage/createSection", section)
   }

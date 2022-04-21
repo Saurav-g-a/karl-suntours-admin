@@ -54,28 +54,29 @@ export class UpdateHolidaySectionComponent implements OnInit {
       this.router.navigate(['holiday/holiday-section-list/'+this.holidayId])
     })
   }
-  fileChangeEvent(event,type){
+  fileChangeEvent(event,i){
     let _this=this
       let file = event.target.files[0];
-      console.log(file.file)
-      _this.dbioService.uploadImage(event.target).subscribe((res:any)=>{
-        console.log(res)
-        if(type=='section'){
-          this.sections.image=res
-        }
-        else{
-          this.addSection(res)
-        }
-      })
+      console.log(file)
+
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function () {
-        //me.modelvalue = reader.result;
+        // me.modelvalue = reader.result;
         console.log(reader.result);
-        // let data={
-        //   imageUrl:reader.result
-        // }
-  
+        let data={
+          data:reader.result,
+          fileName:file.name  
+        }
+        _this.dbioService.uploadImage(data).subscribe((res:any)=>{
+          console.log(res)
+          if(i==='section'){
+            _this.sections['image']=res.url
+          }
+          else{
+            _this.subsections[i]['image']=res.url
+          }
+        })
       };
       reader.onerror = function (error) {
         console.log('Error: ', error);
