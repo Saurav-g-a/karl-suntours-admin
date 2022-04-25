@@ -19,8 +19,15 @@ edit (id){
 }
 getUser(){
   this.dbioService.getUser().subscribe((res:any)=>{
-    console.log(res.results)
-    this.userList=res.results
+    this.userList=res
+  })
+}
+delete(id){
+  this.dbioService.deleteUser(id).subscribe((res:any)=>{
+    if(res.success==true){
+      this.getUser()
+    }
   })
 }
 }
+

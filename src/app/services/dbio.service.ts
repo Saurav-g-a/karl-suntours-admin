@@ -42,6 +42,9 @@ getHomePageMeta(){
   getUser() {
     return this.http.get(environment.url + "/users")
   }
+  deleteUser(id) {
+    return this.http.delete(environment.url + `/users/${id}`)
+  }
   updateUserData(data) {
     return this.http.post(environment.url + "/users/update", data)
   }
