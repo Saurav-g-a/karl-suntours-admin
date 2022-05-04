@@ -29,7 +29,8 @@ export class CreateMetaDataComponent implements OnInit {
 
 getMetaData(){
 this.dbioService.getHomePageMeta().subscribe((res:any)=>{
-  this.meta={...res}
+   this.meta={...res}
+
 })
 }
   submit(){
