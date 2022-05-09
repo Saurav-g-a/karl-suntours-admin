@@ -117,6 +117,25 @@ export const navItems: INavData[] = [
       },
     ]
   },
+  {
+    name: 'Add Menu',
+    url: '/createmenu',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    },
+    children:[
+      {
+        name:'Menu List',
+         url:'menu/menuList'
+      },
+      {
+        name:'Create Menu',
+        url:'menu/add-menu'
+      },
+    ]
+  },
   // {
   //   title: true,
   //   name: 'Theme'

@@ -68,6 +68,8 @@ import { HolidaySectionListComponent } from './views/holiday/holiday-section-lis
 import { UpdateMetaDestinationSectionComponent } from './views/update-meta-destination-section/update-meta-destination-section.component';
 import { UsermanagementComponent } from './views/usermanagement/usermanagement.component';
 import { UserListComponent } from './views/user-list/user-list.component';
+import { CreateMenuComponent } from './views/create-menu/create-menu.component';
+import { MenuListComponent } from './views/menu-list/menu-list.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -115,7 +117,9 @@ import { UserListComponent } from './views/user-list/user-list.component';
     HolidaySectionListComponent,
     UpdateMetaDestinationSectionComponent,
     UsermanagementComponent,
-    UserListComponent
+    UserListComponent,
+    CreateMenuComponent,
+    MenuListComponent
   ],
   providers: [
     {

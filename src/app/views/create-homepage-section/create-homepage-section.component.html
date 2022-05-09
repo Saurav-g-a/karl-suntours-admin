@@ -54,29 +54,6 @@
                             [(ngModel)]="subsection.title"
                             class="form-control" name="title" id="title" placeholder="Add title">
                         </div>
-                        <div class="form-group">
-                            <label for="title">Add description</label>
-                            <input type="text" 
-                            [(ngModel)]="subsection.description"
-                            class="form-control" name="description" id="description"
-                            placeholder="Add description">
-                        </div>
-                        <div class="form-group">
-                            <label for="image">Add image</label>
-                            <input type="file" 
-                            (change)="fileChangeEvent($event,i)"
-                            [(ngModel)]="subsection.image"
-                            class="form-control" name="image" id="image" placeholder="Add image">
-                            <div *ngIf="subsection.image">
-                                <img [src]='subsection.image' height="10%" width="10%">
-                                </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="title">Add percentage width of the section</label>
-                            <input type="text" 
-                            [(ngModel)]="subsection.percentage"
-                            class="form-control" name="percentage" id="percentage" placeholder="Add percentage">
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12 ">

@@ -1,0 +1,61 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>{{pageTitle}} </strong>
+            <small>Form</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+                <label for="menu">Menu Title</label>
+                <input type="text" 
+                [(ngModel)]="menu.title"
+                class="form-control" name="title" id="title" placeholder="Menu title">
+            </div>
+            <div class="form-group">
+                <label for="menu">Menu Image</label>
+                <input type="file" 
+                (change)="fileChangeEvent($event)"
+                [(ngModel)]="menu.image"
+                required
+                class="form-control" name="image" id="image" placeholder="Choose image">
+                <div *ngIf="menu.image!=''">
+                    <img [src]=menu.image  height="10%" width="10%">
+                    </div>
+              </div>
+        
+<div class="row">
+                 
+                <div class="col-sm-12 " *ngFor="let submenu of subMenus,let i=index">
+                    
+                    <button type="submit" (click)="deleteSubMenu(i)" class="btn btn-sm btn-danger">Delete section</button>
+                    <div class="card p-4 mt-4">
+                        <div class="form-group">
+                            <label for="title">Add SubMenu Title</label>
+                            <input type="text" 
+                            [(ngModel)]="submenu.title"
+                            class="form-control" name="title" id="title" placeholder="Add title">
+                        </div>
+                        <div class="form-group">
+                    </div>
+                </div>
+             
+            </div> 
+          </div>
+          <div class="col-sm-12 ">
+            <button type="button" (click)="addSubMenu('')" class="btn btn-sm btn-primary">Add SubMenu</button>
+        </div>
+        <div class="col-sm-12 text-center" *ngIf="!menuId">
+            <button type="submit" (click)="submit()" class="btn btn-sm btn-success">Submit Form</button>
+        </div>
+        <div class="col-sm-12 text-center"*ngIf="menuId">
+            <button type="submit" (click)="editSubmit()" class="btn btn-sm btn-success">Edit Menu Form</button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+  </div>
+  

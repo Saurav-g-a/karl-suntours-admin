@@ -11,6 +11,12 @@ export class DbioService {
   userLogin(data) {
     return this.http.post(environment.url + "/auth/login", data)
   }
+  getMenusList(){
+    return this.http.get(environment.url+'/menu/getMenuList')
+  }
+  deleteMenusList(id){
+    return this.http.delete(environment.url+`/menu/${id}`)
+  }
   deleteHomepageSection(id) {
     return this.http.delete(environment.url + `/homepage/deleteHomePageSection/${id}`)
   }
@@ -19,6 +25,9 @@ export class DbioService {
   }
   deleteDestinationpageSection(destinationId, sectionId) {
     return this.http.delete(environment.url + `/destination/deleteDestinationSection/${destinationId}/${sectionId}`,)
+  }
+  getMenuById(id) {
+    return this.http.get(environment.url + `/menu/getMenu/${id}`)
   }
   uploadImage(image) {
     console.log(image)
@@ -32,6 +41,12 @@ getHomePageMeta(){
 }
   createHomepageSection(section) {
     return this.http.post(environment.url + "/homepage/createSection", section)
+  }
+  createMenu(data) {
+    return this.http.post(environment.url + "/menu/createMenu", data)
+  }
+  editMenu(data){
+    return this.http.post(environment.url + "/menu/update", data)
   }
   getUserDetails(id) {
     return this.http.get(environment.url + "/users/" + id)
@@ -89,6 +104,8 @@ getHomePageMeta(){
     return this.http.get(environment.url + "/destination/" + id)
   }
   updateDestination(data) {
+    delete data.indexes 
+    delete data.uuid
     return this.http.post(environment.url + "/destination/update", data)
   }
   getAllDestinations() {
