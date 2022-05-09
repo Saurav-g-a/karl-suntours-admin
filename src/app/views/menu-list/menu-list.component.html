@@ -1,0 +1,35 @@
+<div class="animated fadeIn" *ngIf="menuList">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Menu List
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Menu Title</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let menu of menuList"> 
+                  <td>{{menu.title}}</td>
+                  <td>
+                    <button type="button" (click)="edit(menu.id)" class="btn btn-sm btn-primary">Edit</button>
+                
+                  </td>
+                  <td>
+                    <button type="button" (click)="delete(menu.id)" class="btn btn-sm btn-primary">Delete</button>
+                  </td>
+                </tr> 
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+      

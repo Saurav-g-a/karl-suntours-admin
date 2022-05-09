@@ -31,6 +31,8 @@ import { UpdateMetaDestinationSectionComponent } from './views/update-meta-desti
 import { UserListComponent } from './views/user-list/user-list.component';
 import { UsermanagementComponent } from './views/usermanagement/usermanagement.component';
 import { AuthGuard } from './auth.guard';
+import { CreateMenuComponent } from './views/create-menu/create-menu.component';
+import { MenuListComponent } from './views/menu-list/menu-list.component';
 export const routes: Routes = [
   {
     path: '',
@@ -167,7 +169,19 @@ export const routes: Routes = [
         path: 'metadata/list',
         component: MetaDataListComponent
       },
+      {
+        path: 'menu/menuList',
+        component: MenuListComponent
+      },
       
+      {
+        path: 'menu/add-menu',
+        component: CreateMenuComponent
+      },
+      {
+        path: 'menu/edit-menu/:id',
+        component: CreateMenuComponent
+      },
       {
         path: 'homepage/createMeta',
         component: CreateMetaDataComponent

@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   url:"http://sun-1.co.uk:3001/v1",
+  url1:"http://localhost:3000/v1",
 };
 
 /*
