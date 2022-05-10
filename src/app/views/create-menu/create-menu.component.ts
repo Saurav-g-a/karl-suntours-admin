@@ -19,12 +19,12 @@ export class CreateMenuComponent implements OnInit {
   menu={
     title:"",
     image:"",
-    icon:"",
-    link:"http://sun-1.co.uk:3000/"
+    icon:"" 
   }
 
   subMenus:{ 
-    title:""
+    title:"",
+    link:"http://sun-1.co.uk:3000/"
   }[]=[]
 
   ngOnInit(): void {
@@ -40,7 +40,8 @@ export class CreateMenuComponent implements OnInit {
 
   addSubMenu(res:any){
     this.subMenus.push({
-      "title":""
+      "title":"",
+      "link":"http://sun-1.co.uk:3000/"
     })
   }
   deleteSubMenu(i){
