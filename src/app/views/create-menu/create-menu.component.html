@@ -14,9 +14,20 @@
                 class="form-control" name="title" id="title" placeholder="Menu title">
             </div>
             <div class="form-group">
+                <label for="menu">Menu Icon</label>
+                <input type="file" 
+                (change)="fileChangeEvent($event,'icon')"
+                [(ngModel)]="menu.icon"
+                required
+                class="form-control" name="icon" id="icon" placeholder="Choose icon">
+                <div *ngIf="menu.icon!=''">
+                    <img [src]=menu.icon  height="10%" width="10%">
+                    </div>
+              </div>
+            <div class="form-group">
                 <label for="menu">Menu Image</label>
                 <input type="file" 
-                (change)="fileChangeEvent($event)"
+                (change)="fileChangeEvent($event,'image')"
                 [(ngModel)]="menu.image"
                 required
                 class="form-control" name="image" id="image" placeholder="Choose image">
