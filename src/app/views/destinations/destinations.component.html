@@ -9,6 +9,7 @@
             <table class="table">
               <thead>
                 <tr>
+                  <th>id</th>
                   <th>Destination Title</th>
                   <th>Destination type</th>
                   <th>Action</th>
@@ -16,6 +17,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let section of destinations">
+                  <td>{{section.id}}</td>
                   <td>{{section.title}}</td>
                   <td>{{section.type}}</td>
                   <td>
