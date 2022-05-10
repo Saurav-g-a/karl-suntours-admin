@@ -18,7 +18,8 @@ export class CreateMenuComponent implements OnInit {
 
   menu={
     title:"",
-    image:""
+    image:"",
+    icon:""
   }
 
   subMenus:{ 
@@ -46,6 +47,7 @@ export class CreateMenuComponent implements OnInit {
     this.subMenus.splice(i,1)
   }
   submit(){
+    console.log(this.menu)
     this.menu['subMenus']=this.subMenus
     this.dbioService.createMenu(this.menu).subscribe((res:any)=>{
       console.log(res)
@@ -55,7 +57,7 @@ export class CreateMenuComponent implements OnInit {
       // this.router.navigate(['homepage/sections'])
     })
   }
-  fileChangeEvent(event){
+  fileChangeEvent(event,type){
     let _this=this
       let file = event.target.files[0];
       let reader = new FileReader();
@@ -69,8 +71,15 @@ export class CreateMenuComponent implements OnInit {
         }
         _this.dbioService.uploadImage(data).subscribe((res:any)=>{
           console.log(res)
-          // _this.section['background']=res.url       
+          if(type=='image'){
             _this.menu['image']=res.url
+          }
+          else{
+            console.log('here')
+            _this.menu['icon']=res.url
+          }
+          // _this.section['background']=res.url       
+            
         })
       };
       reader.onerror = function (error) {
@@ -89,11 +98,11 @@ this.dbioService.getMenuById(id).subscribe((res:any)=>{
     this.menu['subMenus']=this.subMenus
     this.menu['id']=this.menuId
     console.log(this.menu)
-    this.dbioService.editMenu(this.menu).subscribe((res:any)=>{
-      console.log(res)
-      if(res.id){
-        this.router.navigate(['/menu/menuList'])
-      }
-    })
+      this.dbioService.editMenu(this.menu).subscribe((res:any)=>{
+        console.log(res)
+        if(res.id){
+          this.router.navigate(['/menu/menuList'])
+        }
+      })
   }
 }
