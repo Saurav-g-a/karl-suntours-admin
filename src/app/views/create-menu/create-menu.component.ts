@@ -24,7 +24,7 @@ export class CreateMenuComponent implements OnInit {
 
   subMenus:{ 
     title:"",
-    link:"http://sun-1.co.uk:3000/"
+    link:""
   }[]=[]
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class CreateMenuComponent implements OnInit {
   addSubMenu(res:any){
     this.subMenus.push({
       "title":"",
-      "link":"http://sun-1.co.uk:3000/"
+      "link":""
     })
   }
   deleteSubMenu(i){

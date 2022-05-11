@@ -9,14 +9,12 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>id</th>
                   <th>Holiday Title</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let section of holidays">
-                  <td>{{section.id}}</td>
                   <td>{{section.title}}</td>
                   <td>
                     <button type="button" (click)="edit(section.id)" class="btn btn-sm btn-primary">Edit</button>
