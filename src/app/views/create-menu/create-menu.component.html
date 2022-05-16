@@ -24,8 +24,20 @@
                     <img [src]=menu.icon  height="10%" width="10%">
                     </div>
               </div>
+              <div class="form-group">
+                <label for="menu">Featured Title</label>
+                <input type="text" 
+                [(ngModel)]="menu.featuredPlace"
+                class="form-control" name="title" id="title" placeholder="Featured Title">
+            </div>
             <div class="form-group">
-                <label for="menu">Menu Image</label>
+                <label for="menu">Featured Link</label>
+                <input type="text" 
+                [(ngModel)]="menu.featuredLink"
+                class="form-control" name="title" id="title" placeholder="Featured Link">
+            </div>
+            <div class="form-group">
+                <label for="menu">Featured Image</label>
                 <input type="file" 
                 (change)="fileChangeEvent($event,'image')"
                 [(ngModel)]="menu.image"
@@ -35,6 +47,7 @@
                     <img [src]=menu.image  height="10%" width="10%">
                     </div>
               </div>
+              
         
 <div class="row">
                  

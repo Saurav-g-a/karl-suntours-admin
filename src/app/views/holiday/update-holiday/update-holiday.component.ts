@@ -9,7 +9,7 @@ import { DbioService } from 'src/app/services/dbio.service';
 })
 export class UpdateHolidayComponent implements OnInit {
 
-  holidayId=""
+  holidayId="" 
   holiday:any={}
   subsections=[]
   slides=[]
@@ -38,7 +38,6 @@ export class UpdateHolidayComponent implements OnInit {
     })
   }
   deleteSection(i){
-    console.log(i)
     this.subsections.splice(i,1)
   }
   submit(){

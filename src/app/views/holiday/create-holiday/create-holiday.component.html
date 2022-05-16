@@ -51,6 +51,13 @@
                     [(ngModel)]="holiday.canonical"
                     class="form-control" name="canonical" id="canonical" placeholder="tycanonicalpe">
                   </div>
+                  <div class="form-check">
+                    <input type="checkbox" 
+                    [(ngModel)]="holiday.shownOnDashboard"
+                    class="form-check-input" name="shownOnDashboard" id="shownOnDashboard" >
+                    <label for="company">Shown on dashboard</label>
+                   
+                </div>
         
             <!-- <div class="form-group">
                 <label for="company">Add type</label>

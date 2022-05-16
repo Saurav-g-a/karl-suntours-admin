@@ -19,7 +19,9 @@ export class CreateMenuComponent implements OnInit {
   menu={
     title:"",
     image:"",
-    icon:"" 
+    icon:"" ,
+    featuredLink:"",
+    featuredPlace:""
   }
 
   subMenus:{ 

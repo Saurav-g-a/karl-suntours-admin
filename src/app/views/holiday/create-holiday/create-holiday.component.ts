@@ -20,7 +20,9 @@ export class CreateHolidayComponent implements OnInit {
     type:"",
     metaTitle:'',
     metaDescription:'',
-    canonical:''
+    canonical:'',
+    shownOnDashboard:false
+
   }
 
   subsections:{ 
